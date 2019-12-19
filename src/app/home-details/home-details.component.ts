@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { masterJson } from "../utils/json/home-details";
 import { Step } from "../common/components/sub-progress-bar/sub-progress-bar.component";
 
+import { HomeDetailsService } from './home-details.service';
+
 @Component({
   selector: "app-home-details",
   templateUrl: "./home-details.component.html",
@@ -15,7 +17,7 @@ export class HomeDetailsComponent implements OnInit {
     { id: "homeConstruction", order: 2, name: "Home construction" },
     { id: "homeProtection", order: 3, name: "Home protection" }
   ];
-  constructor() {}
+  constructor(private homeDetailService: HomeDetailsService) {}
 
   ngOnInit() {}
 
@@ -46,5 +48,13 @@ export class HomeDetailsComponent implements OnInit {
    */
   executeFunction(func: string) {
     eval("this." + func);
+  }
+
+  handleSubmit() {
+    this.homeDetailService
+      .getHomeDetails()
+      .subscribe(res => {
+        console.log('home details', res);
+      });
   }
 }

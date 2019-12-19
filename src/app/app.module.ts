@@ -16,6 +16,9 @@ import { DiscountsComponent } from "./details/discounts/discounts.component";
 import { DetailsComponent } from "./details/details.component";
 import { AddressComponent } from './components/google/address/address.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { HomeDetailsService } from './home-details/home-details.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,13 +33,16 @@ import { AddressComponent } from './components/google/address/address.component'
     DetailsComponent,
     AddressComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule,
+  imports: [
+    BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule,
     AgmCoreModule.forRoot({
       language: 'en',
       apiKey: 'AIzaSyD-gY0V_jFUP3kaeq429UVXGYP1O-R6_zU',
       libraries: ['geometry', 'places']
-    })],
-  providers: [],
+    }),
+    HttpClientModule,
+  ],
+  providers: [HomeDetailsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
