@@ -1,0 +1,21 @@
+<div class="container-fluid" xmlns:trackBy="http://www.w3.org/1999/xhtml">
+  <div class="row justify-content-center mt-4 my-4">
+    <div class="col-12 col-xl-8 col-lg-10 col-md-10 col-sm-10">
+      <app-status-bar activeStepId="details"></app-status-bar>
+    </div>
+  </div>
+  <ng-container *ngIf="page === 'aboutme'">
+    <app-about-me
+      [data]="data.about"
+      (onBack)="onAboutBack($event)"
+      (onSubmit)="onAboutFormSubmit($event)"
+    ></app-about-me>
+  </ng-container>
+  <ng-container *ngIf="page === 'discounts'">
+    <app-discounts
+      [data]="data.discount"
+      (onBack)="onDiscountBack($event)"
+      (onSubmit)="onDiscountFormSubmit($event)"
+    ></app-discounts>
+  </ng-container>
+</div>

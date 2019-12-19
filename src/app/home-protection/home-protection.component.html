@@ -1,0 +1,148 @@
+<div class="container-fluid" xmlns:trackBy="http://www.w3.org/1999/xhtml">
+  <div class="row justify-content-center mt-4 my-4">
+    <div class="col-12 col-xl-8 col-lg-10 col-md-10 col-sm-10">
+      <app-status-bar activeStepId="home"></app-status-bar>
+    </div>
+  </div>
+  <div class="row justify-content-center pt-4 mx-auto">
+    <div class="col-12 col-xl-8 col-lg-10 col-md-10 col-sm-10 welcome-text">
+      Francesca, tell us about your home.
+    </div>
+  </div>
+  <div class="row justify-content-center mt-4">
+    <div class="col-12 col-xl-8 col-lg-10 col-md-10 col-sm-10">
+      <div class="card">
+        <div class="card-header">
+          <app-sub-progress-bar [steps]="steps" activeStepId="homeProtection"></app-sub-progress-bar>
+        </div>
+        <div class="card-body">
+          <div class="row justify-content-start mx-auto">
+            <section class=" form-divide col-md-12 col-lg-12 col-xs-12">
+              <div class="form-header-blue">Your Home’s protection</div>
+              <div class="form-header">Tell us about the features that protect your home</div>
+              <div class="line"></div>
+              <div class="form-header little-space">Does the property have:</div>
+              <div class="little-space">
+                <div>
+                  <label class="checkbox-container">
+                    <input type="checkbox">
+                    <span class="checkMark"></span>
+                  </label>
+                  <span>Storm Shutters</span>
+                </div>
+                <div>
+                  <label class="checkbox-container">
+                    <input type="checkbox">
+                    <span class="checkMark"></span>
+                  </label>
+                  <span>Secondary water resistant roof barrier</span>
+                </div>
+                <div>
+                  <label class="checkbox-container">
+                    <input type="checkbox">
+                    <span class="checkMark"></span>
+                  </label>
+                  <span>Deadbolts</span>
+                </div>
+                <div>
+                  <label class="checkbox-container">
+                    <input type="checkbox">
+                    <span class="checkMark"></span>
+                  </label>
+                  <span>Laminated Windows</span>
+                </div>
+                <div>
+                  <label class="checkbox-container">
+                    <input type="checkbox">
+                    <span class="checkMark"></span>
+                  </label>
+                  <span>Sprinkler System</span>
+                </div>
+                <div>
+                  <label class="checkbox-container">
+                    <input type="checkbox">
+                    <span class="checkMark"></span>
+                  </label>
+                  <span>Fire Extinguisher</span>
+                </div>
+                <div>
+                  <label class="checkbox-container">
+                    <input type="checkbox">
+                    <span class="checkMark"></span>
+                  </label>
+                  <span>Smoke Detectors</span>
+                </div>
+              </div>
+
+              <div>
+                <label class="col-form-label form-label little-space">
+                  What type of Security Alarm does the property have?
+                </label>
+                <select class="form-control">
+                  <option></option>
+                </select>
+              </div>
+              <div>
+                <label class="col-form-label form-label">
+                  What type of water detection device does the property have?
+                </label>
+                <select class="form-control">
+                  <option></option>
+                </select>
+              </div>
+              <div>
+                <label class="col-form-label form-label">
+                  What type of Fire Alarm does the property have?
+                </label>
+                <select class="form-control">
+                  <option></option>
+                </select>
+              </div>
+              <div class="form-header-blue little-space">Protection Class </div>
+              <div class="form-header">Protection class is based upon an extensive evaluation of an area’s water supply, delivery facilities and the local community or subscription fire department’s ability to respond in an emergency.</div>
+              <div class="line little-space"></div>
+              <div>
+                <label class="col-form-label form-label">We found 1 fire departments in your area. Please select your corresponding fire department.</label>
+                <div>
+                  <input type="radio" /><span >SouthSide FD </span>
+                </div>
+
+              </div>
+              <div>
+                <label class="col-form-label form-label">
+                  How far is your home from the responding fire department?
+                </label>
+                <select class="form-control">
+                  <option></option>
+                </select>
+              </div>
+              <div>
+                <label class="col-form-label form-label">
+                  Is your home within 1,000 feet of the nearest fire hydrant?
+                </label>
+                <div>
+                  <input  class="toggle toggle-left" id="toggle-on-" name="toggle-on-" type="radio" value="Yes">
+                  <label for="toggle-on-" class="radio-btn-option">Yes</label>
+                  <input id="toggle-off-"  class="toggle toggle-right" name="toggle-off-" type="radio" value="No">
+                  <label for="toggle-off-" class="radio-btn-option">No</label>
+                </div>
+              </div>
+
+            </section>
+          </div>
+        </div>
+
+          <div class="card-footer container">
+
+              <button class="back" >Cancel</button>
+              <button class="submit" >Home Claims</button>
+          </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+</div>
+

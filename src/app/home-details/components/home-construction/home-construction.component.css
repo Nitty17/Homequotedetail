@@ -1,0 +1,35 @@
+.checkbox-container + span{
+  position: relative; left : 23px; top: 10px;	color: #333333;	font-family: "Mission Gothic Regular";	font-size: 18px;	line-height: 23px;
+}
+.submit{
+ margin-left: 10px; box-sizing: border-box;	height: 43.5px;	width: 252.5px;	border: 1.5px solid #999999;	border-radius: 5px;
+}
+.back
+{	height: 44px;	width: 157px;	border: 1.5px solid #2C68AB;	border-radius: 5px;	background-color: #FFFFFF; color: #2C68AB; }
+ select{
+   width: 247.5px;
+ }
+ .form-header-lg{
+   font-family: "Mission Gothic Regular";	font-size: 24px;	line-height: 31px;
+ }
+ .list + .list-item{
+   margin-top: 10px;
+ }
+ .list-item{
+   font-family: "Mission Gothic Regular";		line-height: 31px;
+ }
+ .add-line{
+    border-right: 1px solid #979797;
+ }
+ .box{
+   padding: 12px;
+   margin: 2px;
+   border: 1px solid #4D4D4D;
+ }
+
+  .edit{
+    color: #2C68AB;
+    float: right;
+    text-decoration: underline !important;
+   }
+

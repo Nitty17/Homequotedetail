@@ -1,0 +1,119 @@
+<ng-container>
+  <div class="row justify-content-center pt-4 mx-auto">
+    <div class="col-12 col-xl-8 col-lg-10 col-md-10 col-sm-10 welcome-text">
+      Francesca, let's see if you qualify for any discounts.
+    </div>
+  </div>
+  <div class="row justify-content-center mt-4">
+    <div class="col-12 col-xl-8 col-lg-10 col-md-10 col-sm-10">
+      <form [formGroup]="formGroup" (ngSubmit)="submit()" class="card">
+        <div class="card-header">
+          <app-sub-progress-bar
+            [steps]="steps"
+            activeStepId="discounts"
+          ></app-sub-progress-bar>
+        </div>
+        <div class="card-body">
+          <div class="row justify-content-start mx-auto">
+            <section class="form-divide col-12 col-md-12 col-lg-12">
+              <div class="row form-header" style="font-size: 1.6rem;">
+                <div class="col-12">
+                  You maybe eligible for discounts on your policy.
+                </div>
+              </div>
+              <div class="row form-header mt-4 mb-3">
+                <div class="col-12">
+                  Do you currently have any of these AAA products?
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-md-4">
+                  <label class="checkbox-container">
+                    <input
+                      type="checkbox"
+                      formControlName="aaaMembership"
+                      hidden
+                    />
+                    <span class="checkMark"></span>
+                    <span>AAA Membership</span>
+                  </label>
+                </div>
+                <div class="col-12 col-md-4">
+                  <label class="checkbox-container">
+                    <input
+                      type="checkbox"
+                      formControlName="aaaAutoInsurance"
+                      hidden
+                    />
+                    <span class="checkMark"></span>
+                    <span>AAA Auto Insurance</span>
+                  </label>
+                </div>
+                <div class="col-12">
+                  <label class="checkbox-container">
+                    <input
+                      type="checkbox"
+                      formControlName="aaaLifeInsurance"
+                      hidden
+                    />
+                    <span class="checkMark"></span>
+                    <span>AAA Life Insurance</span>
+                  </label>
+                </div>
+                <div class="col-12 mt-4">
+                  <div class="form-label mb-3">
+                    Are we the first insurance company that you have contacted for auto
+                    insurance?
+                  </div>
+                  <div class="btn-group">
+                    <label
+                      class="btn btn-outline-primary"
+                      [ngClass]="
+                        formGroup.value.firstInsurance === 'yes' && 'active'
+                      "
+                    >
+                      <input
+                        type="radio"
+                        formControlName="firstInsurance"
+                        value="yes"
+                        hidden
+                      />Yes
+                    </label>
+                    <label
+                      class="btn btn-outline-primary"
+                      [ngClass]="
+                        formGroup.value.firstInsurance === 'no' && 'active'
+                      "
+                    >
+                      <input
+                        type="radio"
+                        formControlName="firstInsurance"
+                        value="no"
+                        hidden
+                      />No
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <div class="col-12 mt-4">
+              <div class="form-label mb-3">
+                To speed up the quote process, we prefill forms with information from publicy available sources. Please review our Privacy Policy and information about our use of Consumer Reports.
+              </div>
+            </div>
+          </div>
+        </div>
+        <ng-container>
+          <section class="form-divide">
+            <div class="card-footer">
+              <button type="button" (click)="goBack()" class="back">
+                Back
+              </button>
+              <button type="submit" class="submit">Discount</button>
+            </div>
+          </section>
+        </ng-container>
+      </form>
+    </div>
+  </div>
+</ng-container>

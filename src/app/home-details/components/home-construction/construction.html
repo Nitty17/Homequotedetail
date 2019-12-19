@@ -1,0 +1,161 @@
+<div class="container-fluid" xmlns:trackBy="http://www.w3.org/1999/xhtml">
+    <div class="row justify-content-center mt-4 my-4">
+        <div class="col-12 col-xl-8 col-lg-10 col-md-10 col-sm-10">
+            <app-status-bar activeStepId="home"></app-status-bar>
+        </div>
+    </div>
+    <div class="row justify-content-center pt-4 mx-auto">
+        <div class="col-12 col-xl-8 col-lg-10 col-md-10 col-sm-10 welcome-text">
+            Francesca, tell us about your home.
+        </div>
+    </div>
+    <div class="row justify-content-center mt-4">
+        <div class="col-12 col-xl-8 col-lg-10 col-md-10 col-sm-10">
+            <div class="card">
+                <div class="card-header">
+                    <app-sub-progress-bar activeStepId="homeConstruction"></app-sub-progress-bar>
+                </div>
+                <div class="card-body">
+
+                    <div class="row justify-content-start" *ngIf="header">
+                        <div class="col-12 col-xl-12 col-lg-10 col-md-10 col-sm-10 form-header-lg">
+                            We found some information about your home's construction. Please verify or update
+                            this infomation.
+                        </div>
+                    </div>
+                    <div class="row justify-content-start mx-auto">
+
+                        <ng-container *ngFor="let ui of uiData">
+                            <ng-container *ngIf="ui.type==='section'">
+                                <section class=" form-divide col-md-12 col-lg-12 col-xs-12 {{ui.class}}">
+                                    <div class="row form-header-blue ">{{ui.title}}</div>
+                                    <div class="row form-header ">{{ui.desc}}</div>
+                                    <div class="row line"></div>
+                                    <ng-container *ngFor="let uiElements of ui.elements">
+                                        <ng-container *ngIf="uiElements.type ==='row-6'">
+
+                                            <div class="row">
+                                                <div class="col-md-6"
+                                                    *ngFor=" let component of uiElements.elements; let i = index">
+                                                    <label class="col-form-label form-label">
+                                                        {{component.title}}
+                                                    </label>
+                                                    <ng-container *ngIf="component.type==='text'">
+                                                        <div class="row justify-content-start">
+                                                            <div
+                                                                class="col-12 col-xl-12 col-lg-10 col-md-10 col-sm-10 form-header-lg">
+                                                                {{component.desc}}
+                                                            </div>
+                                                        </div><br>
+                                                    </ng-container>
+
+                                                    <select class="form-control" *ngIf="component.type==='dropdown'">
+                                                        <option *ngFor="let option of component.data">{{option}}
+                                                        </option>
+                                                    </select>
+                                                    <div *ngIf="component.type==='toggle'">
+                                                        <input class="toggle toggle-left" id="toggle-on-{{i}}"
+                                                            name="toggle-on-" type="radio" value="Yes">
+                                                        <label for="toggle-on-{{i}}"
+                                                            class="radio-btn-option">Yes</label>
+                                                        <input id="toggle-off-{{i}}" class="toggle toggle-right"
+                                                            name="toggle-off-" type="radio" value="No">
+                                                        <label for="toggle-off-{{i}}"
+                                                            class="radio-btn-option">No</label>
+                                                    </div>
+                                                    <ng-container *ngIf="component.type==='checkbox'">
+                                                        <div *ngFor="let cbox of component.data; let i=index">
+                                                            <label class="checkbox-container">
+                                                                <input type="checkbox" *ngModel='component.value[i]'>
+                                                                <span class="checkMark"></span>
+                                                            </label>
+                                                            <span>{{cbox}}</span>
+                                                        </div>
+                                                    </ng-container>
+                                                </div>
+                                            </div>
+                                        </ng-container>
+                                        <ng-container *ngIf="uiElements.type ==='row-box'">
+
+                                            <div class="row box">
+                                                <div class="col-md-6 {{component.class}}"
+                                                    *ngFor=" let component of uiElements.elements; let i= index;">
+                                                    <div class="form-label list">{{component.desc}} <a
+                                                            class="edit blue-heading">Edit</a></div>
+                                                    <!-- <span >General Construction</span> <a href="">Edit</a> -->
+                                                    <div class="list-item" *ngFor="let info of component.data"><span
+                                                            class="bold-text">{{info.title}}</span> {{info.value}}</div>
+                                                    <!-- <div class="list-item"><span class="bold-text">Square Footage:</span> 2092 sq ft</div>
+                                                        <div class="list-item"><span class="bold-text">Number of Stories:</span> 1</div>
+                                                        <div class="list-item"><span class="bold-text">Foundation Type:</span> Concrete Slap</div>
+                                                        <div class="list-item"><span class="bold-text">Finished Lowest Level:</span> No</div>
+                                                        <div class="list-item"><span class="bold-text">Exterior Wall Finish:</span> Brick Veener</div> -->
+                                                </div>
+
+
+                                            </div>
+                                        </ng-container>
+                                        <ng-container *ngIf="uiElements.type ==='row-12'">
+                                            <div class="row">
+                                                <div class="col-md-12"
+                                                    *ngFor=" let component of uiElements.elements; let i= index;">
+                                                    <label class="col-form-label form-label">
+                                                        {{component.title}}
+                                                    </label>
+
+                                                    <ng-container *ngIf="component.type==='text'">
+                                                        <div class="row justify-content-start">
+                                                            <div
+                                                                class="col-12 col-xl-12 col-lg-10 col-md-10 col-sm-10 form-header-lg">
+                                                                {{component.desc}}
+                                                            </div>
+                                                        </div><br>
+                                                    </ng-container>
+                                                    <select class="form-control" *ngIf="component.type==='dropdown'">
+                                                        <option *ngFor="let option of component.data">{{option}}
+                                                        </option>
+                                                    </select>
+                                                    <div *ngIf="component.type==='toggle'">
+                                                        <input class="toggle toggle-left" id="toggle-on-{{i}}"
+                                                            name="toggle-on-" type="radio" value="Yes">
+                                                        <label for="toggle-on-{{i}}"
+                                                            class="radio-btn-option">Yes</label>
+                                                        <input id="toggle-off-{{i}}" class="toggle toggle-right"
+                                                            name="toggle-off-" type="radio" value="No">
+                                                        <label for="toggle-off-{{i}}"
+                                                            class="radio-btn-option">No</label>
+                                                    </div>
+                                                    <ng-container *ngIf="component.type==='checkbox'">
+                                                        <div *ngFor="let cbox of component.data;let i=index">
+                                                            <label class="checkbox-container">
+                                                                <input type="checkbox" [(ngModel)]='component.value[i]'
+                                                                    name="checkbox{{i}}">
+                                                                <span class="checkMark"></span>
+                                                            </label>
+                                                            <span>{{cbox}}</span>
+                                                        </div>
+                                                    </ng-container>
+                                                </div>
+                                            </div>
+                                        </ng-container>
+                                    </ng-container>
+                                </section>
+                            </ng-container>
+                        </ng-container>
+                    </div>
+                </div>
+                <ng-container *ngIf="uiData[uiData.length-1].type==='footer'">
+                    <div class="card-footer container">
+                        <ng-container *ngFor="let element of uiData[uiData.length-1].elements">
+                            <button class="{{element.class}}"
+                                (click)="executeFunction(element.event_func)">{{element.title}}</button>
+                        </ng-container>
+                    </div>
+                </ng-container>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>

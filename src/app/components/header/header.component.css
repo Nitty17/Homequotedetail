@@ -1,0 +1,71 @@
+.container-fluid{
+  background-color: #2C68AB !important;
+  height:136px;
+}
+.navbar-brand{
+  color : #FFF;
+  margin:auto;
+}
+
+.navbar-brand .aaa-logo{
+  width:180px;
+  height:100px;
+}
+
+.logo-col{
+  z-index:-1;
+  transform:translateY(15%);
+}
+.header-text-col{
+  z-index:2;
+  position: absolute;
+  transform:translateY(25%);
+}
+.navbar-header-text{
+  font-family:'Mission Gothic Regular', sans-serif;
+  color: #FFF !important;
+  margin:auto;
+  font-size:36px;
+  line-height:47px;
+}
+/* Media Queries for Responsiveness */
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (min-width: 320px) and (max-width: 575px) {
+  .container-fluid{
+    height:66px;
+  }
+  .navbar-brand .aaa-logo{
+    width:97px;
+    height:53px;
+  }
+  .logo-col{
+    z-index:0;
+    margin-top:-10px!important;
+  }
+
+  .header-text-col{
+    z-index:1;
+  }
+
+  .navbar-header-text{
+    font-family:'Mission Gothic Regular', sans-serif;
+    color:#FFF !important;
+    font-size:21px;
+    line-height:27px;
+    margin-left:30%;
+  }
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .navbar-header-text{
+    font-size:36px;
+  }
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .navbar-header-text{
+    font-size:36px;
+  }
+}
+

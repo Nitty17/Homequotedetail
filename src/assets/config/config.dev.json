@@ -1,0 +1,14 @@
+{
+    "env": {
+      "name": "dev"
+    },
+    "apiServers": {
+      "userInfoApiUrl": "https://utcoe8pnm7.execute-api.us-east-1.amazonaws.com/dev/customer",
+      "qouteCreateApiUrl": "https://uo2l9se56i.execute-api.us-west-2.amazonaws.com/dev/quote/create"
+    },
+    "apiRequest": {
+      "timeout": 5000,
+      "retryAttempts": 5,
+      "retryDelay": 1000
+    }
+  }

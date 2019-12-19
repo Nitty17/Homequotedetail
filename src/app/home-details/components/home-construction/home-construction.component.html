@@ -1,0 +1,175 @@
+<div class="container-fluid ">
+    <div class="row justify-content-center mt-4 my-4">
+        <div class="col-12 col-xl-8 col-lg-10 col-md-10 col-sm-10">
+            <app-status-bar activeStepId="home"></app-status-bar>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-12 col-xl-8 col-lg-10 col-md-10 col-sm-10 welcome-text">
+            , tell us about your home.
+        </div>
+    </div><br>
+    <div class="row justify-content-center">
+        <div class="col-12 col-xl-8 col-lg-10 col-md-10 col-sm-10">
+            <div class="card">
+                <div class="card home-list-container">
+                    <div class="card-header">
+                        <app-sub-progress-bar activeStepId="homeConstruction"></app-sub-progress-bar>
+                    </div>
+                    <div class="card-body">
+                        <div class="row justify-content-start">
+                            <div class="col-12 col-xl-12 col-lg-10 col-md-10 col-sm-10 form-header-lg">
+                                We found some information about your home's construction. Please verify or update
+                                    this infomation.
+                            </div>
+                        </div>
+                        <div class="row justify-content-start mt-4 mb-2">
+                            <div class="col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12 form-header-blue">
+                                Your Home's Construction
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="row box">
+                            <div class="col-md-6 add-line">
+                               <div class="form-label list">GENERAL CONSTRUCTION <a class="edit blue-heading">Edit</a></div>
+                               <!-- <span >General Construction</span> <a href="">Edit</a> -->
+                                <div class="list-item"><span class="bold-text">Year Built :</span> 1978</div>
+                                <div class="list-item"><span class="bold-text">Square Footage:</span> 2092 sq ft</div>
+                                <div class="list-item"><span class="bold-text">Number of Stories:</span> 1</div>
+                                <div class="list-item"><span class="bold-text">Foundation Type:</span> Concrete Slap</div>
+                                <div class="list-item"><span class="bold-text">Finished Lowest Level:</span> No</div>
+                                <div class="list-item"><span class="bold-text">Exterior Wall Finish:</span> Brick Veener</div>
+                            </div>
+
+                            <div class="col-md-6">
+                              <div class="form-label list">ROOF, COOLING & HEATING <a class="edit blue-heading">Edit</a></div>
+                                <!-- <span>ROOF, COOLING & HEATING </span>  <a href="">Edit</a> -->
+                                <div class="list-item"> <span class="bold-text">Roof Cover Type: </span>Composition - Architectural</div>
+                                <div class="list-item"><span class="bold-text">Fireplace: </span>Yes</div>
+                            </div>
+                        </div>
+
+
+                        <div class="row justify-content-start">
+                            <div class="col-12 col-xl-12 col-lg-10 col-md-10 col-sm-10 form-header-lg">
+                                Please provide the following additional information.
+                            </div>
+                        </div><br>
+                        <div class="row justify-content-start mx-auto">
+                            <!-- Type description -->
+                            <div class="col-12 col-lg-6 col-md-12 col-sm-12 col-xl-6 form-header">
+                                Number of units?
+                                <div>
+                                    <select  class="form-control"
+                                        id="" >
+                                        <!-- <option *ngFor="let desc of typeDescOptions" [ngValue]="desc.code">
+                                            {{desc.value}}</option> -->
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 col-md-12 col-sm-12 col-xl-6 form-header">
+                                What is the house made up of?
+                                <div>
+                                    <select  class="form-control"
+                                        >
+                                        <!-- <option *ngFor="let ownShip of vehicleOwnershipOptions"
+                                            [ngValue]="ownShip.code">{{ownShip.value}}</option> -->
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-start mx-auto mt-2">
+
+                            <div class="col-12 col-lg-6 col-md-12 col-sm-12 col-xl-6 form-header">
+                                Is the home certified as a fortified home for safer living?
+                                <div class="switch-radio-group">
+                                    <input class="toggle toggle-left" id="toggle-on-" name="toggle-on-" type="radio"
+                                        value="Yes">
+                                    <label for="toggle-on-" class="radio-btn-option">Yes</label>
+                                    <input id="toggle-off-" class="toggle toggle-right" name="toggle-off-" type="radio"
+                                        value="No">
+                                    <label for="toggle-off-" class="radio-btn-option">No</label>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row justify-content-start mt-4 mb-2">
+                            <div class="col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12 form-header-blue">
+                                Roof, Cooling & Heating
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row justify-content-start mx-auto">
+                            <!-- Type description -->
+                            <div class="col-12 col-lg-6 form-header">
+                                What type of heating does the property have?
+                                <div>
+                                    <select  class="form-control">
+                                        <!-- <option *ngFor="let desc of typeDescOptions" [ngValue]="desc.code">
+                                            {{desc.value}}</option> -->
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Was this vehicle previously titled? -->
+                            <div class="form-header">
+                                Is the heating upgraded?
+                                <div class="switch-radio-group">
+                                    <input class="toggle toggle-left" id="toggle-on-" name="toggle-on-" type="radio"
+                                        value="Yes">
+                                    <label for="toggle-on-" class="radio-btn-option">Yes</label>
+                                    <input id="toggle-off-" class="toggle toggle-right" name="toggle-off-" type="radio"
+                                        value="No">
+                                    <label for="toggle-off-" class="radio-btn-option">No</label>
+                                </div>
+                            </div>
+
+                        </div>
+                            <div class="form-header">
+                                Is the roof hail resistant?
+                                <div class="switch-radio-group">
+                                    <input class="toggle toggle-left" id="toggle-on-" name="toggle-on-" type="radio"
+                                        value="Yes">
+                                    <label for="toggle-on-" class="radio-btn-option">Yes</label>
+                                    <input id="toggle-off-" class="toggle toggle-right" name="toggle-off-" type="radio"
+                                        value="No">
+                                    <label for="toggle-off-" class="radio-btn-option">No</label>
+                                </div>
+
+
+                            <!-- Is this vehicle garaged at policy address? -->
+                            <div class="col-12 col-lg-6 col-md-12 col-sm-12 col-xl-6 form-header">
+                                <p>Is the roof been replaced/upgraded?</p>
+                                <div class="switch-radio-group"></div>
+                                <input class="toggle toggle-left" id="toggle-on-" name="toggle-on-" type="radio"
+                                    value="Yes">
+                                <label for="toggle-on-" class="radio-btn-option">Yes</label>
+                                <input id="toggle-off-" class="toggle toggle-right" name="toggle-off-" type="radio"
+                                    value="No">
+                                <label for="toggle-off-" class="radio-btn-option">No</label>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--card-body-->
+                    <div class="card-footer">
+                        <div class="row justify-content-start mb-4 mt-4">
+                            <div class="col-11 col-lg-11 col-md-11 col-sm-11 col-xl-12">
+                                <div class="btnback">
+                                    <button class="back" name="nextButton" >Back</button>&nbsp;
+                                    <button class="submit" name="nextButton" >
+                                        Home protection
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--footer-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br>

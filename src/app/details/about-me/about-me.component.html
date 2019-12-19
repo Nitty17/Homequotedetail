@@ -1,0 +1,338 @@
+<ng-container>
+  <div class="row justify-content-center pt-4 mx-auto">
+    <div class="col-12 col-xl-8 col-lg-10 col-md-10 col-sm-10 welcome-text">
+      Hi! Let's get started with some basic info.
+    </div>
+  </div>
+  <div class="row justify-content-center mt-4">
+    <div class="col-12 col-xl-8 col-lg-10 col-md-10 col-sm-10">
+      <form [formGroup]="formGroup" (ngSubmit)="submit()" class="card">
+        <div class="card-header">
+          <app-sub-progress-bar
+            [steps]="steps"
+            activeStepId="aboutme"
+          ></app-sub-progress-bar>
+        </div>
+        <div class="card-body">
+          <div class="row justify-content-start mx-auto">
+            <section class="form-divide col-12 col-md-12 col-lg-12">
+              <div class="row form-header-blue ">
+                <div class="col-12">
+                  Policy Type
+                  <div class="line"></div>
+                </div>
+              </div>
+              <div class="row form-header my-4">
+                <div class="col-12">Select Policy Type</div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <label class="col-form-label form-label">
+                    <input
+                      type="radio"
+                      value="homeOwners"
+                      formControlName="policyType"
+                    />
+                    Homeowners Insurance
+                  </label>
+                </div>
+                <div class="col-12">
+                  <label class="col-form-label form-label">
+                    <input
+                      type="radio"
+                      formControlName="policyType"
+                      value="condominimumOwners"
+                    />
+                    Condominimum Owners Insurance
+                  </label>
+                </div>
+                <div class="col-12">
+                  <label class="col-form-label form-label">
+                    <input
+                      type="radio"
+                      formControlName="policyType"
+                      value="renters"
+                    />
+                    Renters Insurance
+                  </label>
+                </div>
+              </div>
+            </section>
+            <section class="form-divide col-12 col-md-12 col-lg-12">
+              <div class="row form-header-blue mt-4 ">
+                <div class="col-12">
+                  Policy Infomation
+                  <div class="line"></div>
+                </div>
+              </div>
+              <div class="row form-header my-4">
+                <div class="col-12">
+                  You will be the primary named insured on this policy.
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-md-2">
+                  <label class="form-label">
+                    Prefix
+                    <select class="form-control" formControlName="prefix">
+                      <option value="">Select</option>
+                      <option value="mr">Mr.</option>
+                      <option value="mrs">Mrs.</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="col-12 col-md-4">
+                  <label class="form-label">
+                    First Name
+                    <input
+                      type="text"
+                      formControlName="firstName"
+                      class="form-control"
+                    />
+                  </label>
+                </div>
+                <div class="col-12 col-md-4">
+                  <label class="form-label">
+                    Last Name
+                    <input
+                      type="text"
+                      formControlName="lastName"
+                      class="form-control"
+                    />
+                  </label>
+                </div>
+                <div class="col-12 col-md-2">
+                  <label class="form-label">
+                    Suffix
+                    <select class="form-control" formControlName="suffix">
+                      <option value="">Select</option>
+                      <option value="mr">Mr.</option>
+                      <option value="mrs">Mrs.</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-12 col-md-6">
+                  <div class="form-group">
+                    <label class="form-label">
+                      Email
+                      <input
+                        type="email"
+                        formControlName="email"
+                        class="form-control"
+                      />
+                    </label>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <label class="form-label">
+                    Date of Birth
+                    <div formGroupName="dob" class="input-group">
+                      <input
+                        type="text"
+                        formControlName="month"
+                        class="form-control text-center"
+                        placeholder="MM"
+                      />
+                        <input
+                          type="text"
+                          formControlName="day"
+                          class="form-control text-center"
+                          placeholder="DD"
+                        />
+                      <input
+                        type="text"
+                        formControlName="year"
+                        class="form-control text-center"
+                        placeholder="YYYY"
+                      />
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-12 col-md-6">
+                  <label class="form-label">
+                    Gender
+                    <div class=" w-100">
+                      <div class="btn-group w-100">
+                        <label
+                          class="btn btn-outline-primary"
+                          [ngClass]="
+                            formGroup.value.gender === 'male' && 'active'
+                          "
+                        >
+                          Male
+                          <input
+                            formControlName="gender"
+                            type="radio"
+                            value="male"
+                            hidden
+                          />
+                        </label>
+                        <label
+                          class="btn btn-outline-primary"
+                          [ngClass]="
+                            formGroup.value.gender === 'female' && 'active'
+                          "
+                        >
+                          Female
+                          <input
+                            formControlName="gender"
+                            type="radio"
+                            value="female"
+                            hidden
+                          />
+                        </label>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label class="form-label">
+                    Marital Status
+                    <div class="btn-group w-100">
+                      <label
+                        class="btn btn-outline-primary text-center"
+                        [ngClass]="
+                          formGroup.value.maritalStatus === 'single' && 'active'
+                        "
+                      >
+                        Single
+                        <input
+                          formControlName="maritalStatus"
+                          type="radio"
+                          value="single"
+                          hidden
+                        />
+                      </label>
+                      <label
+                        class="btn btn-outline-primary text-center"
+                        [ngClass]="
+                          formGroup.value.maritalStatus === 'married' &&
+                          'active'
+                        "
+                      >
+                        Married
+                        <input
+                          formControlName="maritalStatus"
+                          type="radio"
+                          value="married"
+                          hidden
+                        />
+                      </label>
+                      <label
+                        class="btn btn-outline-primary text-center"
+                        [ngClass]="
+                          formGroup.value.maritalStatus === 'widowed' &&
+                          'active'
+                        "
+                      >
+                        Widowed
+                        <input
+                          formControlName="maritalStatus"
+                          type="radio"
+                          value="widowed"
+                          hidden
+                        />
+                      </label>
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-12 col-md-6">
+                  <label class="form-label">
+                    Preferred contact number
+                    <input
+                      class="form-control"
+                      formControlName="contactNumber"
+                    />
+                  </label>
+                  <div class="form-group">
+                    <label class="checkbox-container">
+                      <input
+                        type="checkbox"
+                        formControlName="isMobileNumber"
+                        hidden
+                      />
+                      <span class="checkMark"></span>
+                      <span>This is a mobile number</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section formGroupName="address" class="form-divide col-12">
+              <div class="row justify-content-start mx-auto" *ngIf="isAddressAvailable">
+                <div class="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12" [ngClass]="{'hide-map' : noAddress}">
+                  <img class="google-map-container"
+                    src="https://maps.googleapis.com/maps/api/staticmap?center&markers=color:red|={{finalAddress}}&zoom=18&size={{staticMapWidth}}x{{staticMapHeight}}&key=AIzaSyD-gY0V_jFUP3kaeq429UVXGYP1O-R6_zU">
+                </div>
+              </div>
+
+              <div class="row my-4">
+                <div class="col-12">
+                  <div class="form-header-blue">Policy Address</div>
+                  <div class="line"></div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-md-6">
+                  <!-- <label class="form-header w-100">
+                    Street Address, city, state
+                    <input
+                      type="text"
+                      formControlName="street"
+                      class="form-control"
+                    />
+                  </label> -->
+                  <app-address adressType="geocode" (setAddress)="getSelectedAddress($event)"></app-address>
+                </div>
+                <div class="col-12 col-md-3">
+                  <label class="form-header w-100">
+                    Apt/Unit #
+                    <input
+                      type="text"
+                      formControlName="aptNumber"
+                      class="form-control"
+                    />
+                  </label>
+                </div>
+              </div>
+            </section>
+
+            <section class="form-divide col-12">
+              <div class="my-5">
+                <div class="dotted-border p-4">
+                  <div class="form-label">
+                    <p>Would you like to add second name to policy?</p>
+                    <p>
+                      The person must be your spouse, or a resident and title
+                      holder on the property.
+                    </p>
+                    <label class="form-header-blue mt-3"
+                      >Add Second Name Insured</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <ng-container>
+          <section class="form-divide">
+            <div class="card-footer">
+              <button type="button" (click)="goBack()" class="back">
+                Exit
+              </button>
+              <button type="submit" class="submit">Discount</button>
+            </div>
+          </section>
+        </ng-container>
+      </form>
+    </div>
+  </div>
+</ng-container>

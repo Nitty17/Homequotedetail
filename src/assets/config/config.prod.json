@@ -1,0 +1,13 @@
+{
+    "env": {
+      "name": "prod"
+    },
+    "apiServers": {
+      "userInfoApiUrl": "https://utcoe8pnm7.execute-api.us-east-1.amazonaws.com/prod/customer"
+    },
+    "apiRequest": {
+      "timeout": 5000,
+      "retryAttempts": 5,
+      "retryDelay": 1000
+    }
+  }

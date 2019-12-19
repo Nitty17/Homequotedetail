@@ -1,0 +1,177 @@
+<div class="container-fluid" xmlns:trackBy="http://www.w3.org/1999/xhtml">
+  <div class="row justify-content-center mt-4 my-4">
+    <div class="col-12 col-xl-8 col-lg-10 col-md-10 col-sm-10">
+      <app-status-bar activeStepId="home"></app-status-bar>
+    </div>
+  </div>
+  <div class="row justify-content-center pt-4 mx-auto">
+    <div class="col-12 col-xl-8 col-lg-10 col-md-10 col-sm-10 welcome-text">
+      Francesca, tell us about your home.
+    </div>
+  </div>
+  <div class="row justify-content-center mt-4">
+    <div class="col-12 col-xl-8 col-lg-10 col-md-10 col-sm-10">
+      <div class="card">
+        <div class="card-header">
+          <app-sub-progress-bar [steps]="steps" activeStepId="yourHome"></app-sub-progress-bar>
+        </div>
+        <div class="card-body">
+          <div class="row justify-content-start mx-auto">
+            <ng-container *ngFor="let ui of uiData">
+              <ng-container *ngIf="ui.type === 'section'">
+                <section class=" form-divide col-md-12 col-lg-12 col-xs-12">
+                  <div class="row form-header-blue ">{{ ui.title }}</div>
+                  <div class="row form-header ">{{ ui.desc }}</div>
+                  <div class="row line"></div>
+                  <ng-container *ngFor="let uiElements of ui.elements">
+                    <ng-container *ngIf="uiElements.type === 'row-6'">
+                      <div class="row">
+                        <div
+                          class="col-md-6"
+                          *ngFor="
+                            let component of uiElements.elements;
+                            let i = index
+                          "
+                        >
+                          <label class="col-form-label form-label">
+                            {{ component.title }}
+                          </label>
+                          <select
+                            class="form-control"
+                            *ngIf="component.type === 'dropdown'"
+                          >
+                            <option *ngFor="let option of component.data">{{
+                              option
+                            }}</option>
+                          </select>
+                          <div *ngIf="component.type === 'toggle'">
+                            <input
+                              class="toggle toggle-left"
+                              id="toggle-on-{{ i }}"
+                              name="toggle-on-"
+                              type="radio"
+                              value="Yes"
+                            />
+                            <label
+                              for="toggle-on-{{ i }}"
+                              class="radio-btn-option"
+                              >Yes</label
+                            >
+                            <input
+                              id="toggle-off-{{ i }}"
+                              class="toggle toggle-right"
+                              name="toggle-off-"
+                              type="radio"
+                              value="No"
+                            />
+                            <label
+                              for="toggle-off-{{ i }}"
+                              class="radio-btn-option"
+                              >No</label
+                            >
+                          </div>
+                          <ng-container *ngIf="component.type === 'checkbox'">
+                            <div
+                              *ngFor="let cbox of component.data; let i = index"
+                            >
+                              <label class="checkbox-container">
+                                <input
+                                  type="checkbox"
+                                  *ngModel="component.value[i]"
+                                />
+                                <span class="checkMark"></span>
+                              </label>
+                              <span>{{ cbox }}</span>
+                            </div>
+                          </ng-container>
+                        </div>
+                      </div>
+                    </ng-container>
+                    <ng-container *ngIf="uiElements.type === 'row-12'">
+                      <div class="row">
+                        <div
+                          class="col-md-12"
+                          *ngFor="
+                            let component of uiElements.elements;
+                            let i = index
+                          "
+                        >
+                          <label class="col-form-label form-label">
+                            {{ component.title }}
+                          </label>
+                          <select
+                            class="form-control"
+                            *ngIf="component.type === 'dropdown'"
+                          >
+                            <option *ngFor="let option of component.data">{{
+                              option
+                            }}</option>
+                          </select>
+                          <div *ngIf="component.type === 'toggle'">
+                            <input
+                              class="toggle toggle-left"
+                              id="toggle-on-{{ i }}"
+                              name="toggle-on-"
+                              type="radio"
+                              value="Yes"
+                            />
+                            <label
+                              for="toggle-on-{{ i }}"
+                              class="radio-btn-option"
+                              >Yes</label
+                            >
+                            <input
+                              id="toggle-off-{{ i }}"
+                              class="toggle toggle-right"
+                              name="toggle-off-"
+                              type="radio"
+                              value="No"
+                            />
+                            <label
+                              for="toggle-off-{{ i }}"
+                              class="radio-btn-option"
+                              >No</label
+                            >
+                          </div>
+                          <ng-container *ngIf="component.type === 'checkbox'">
+                            <div
+                              *ngFor="let cbox of component.data; let i = index"
+                            >
+                              <label class="checkbox-container">
+                                <input
+                                  type="checkbox"
+                                  [(ngModel)]="component.value[i]"
+                                  name="checkbox{{ i }}"
+                                />
+                                <span class="checkMark"></span>
+                              </label>
+                              <span>{{ cbox }}</span>
+                            </div>
+                          </ng-container>
+                        </div>
+                      </div>
+                    </ng-container>
+                  </ng-container>
+                </section>
+              </ng-container>
+            </ng-container>
+          </div>
+        </div>
+        <ng-container *ngIf="uiData[uiData.length - 1].type === 'footer'">
+          <div class="card-footer container">
+            <ng-container
+              *ngFor="let element of uiData[uiData.length - 1].elements"
+            >
+              <button
+                class="{{ element.class }}"
+                (click)="executeFunction(element.event_func)"
+              >
+                {{ element.title }}
+              </button>
+            </ng-container>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

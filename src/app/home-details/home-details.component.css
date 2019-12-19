@@ -1,0 +1,13 @@
+.checkbox-container + span{
+  position: relative; left: 38px;  top: 12px;	color: #333333;	font-family: "Mission Gothic Regular";	font-size: 18px;	line-height: 23px;
+}
+.submit{
+ margin-left: 10px; box-sizing: border-box;	height: 43.5px;	width: 252.5px;	border: 1.5px solid #999999;	border-radius: 5px;
+}
+.back
+{	height: 44px;	width: 157px;	border: 1.5px solid #2C68AB;	border-radius: 5px;	background-color: #FFFFFF; color: #2C68AB; }
+ select{
+   width: 247.5px;
+ }
+
+

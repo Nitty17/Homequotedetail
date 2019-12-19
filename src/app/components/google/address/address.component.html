@@ -1,0 +1,5 @@
+<label  for="address-line1">Street Address,city,state</label>
+<input type="text" (change)="storeValueToLocalStorage($event)"
+  class="form-control" id="address-line1" [(ngModel)]="autocompleteInput" #addressText>
+  <img class="icon" src="/assets/images/location.svg">
+  <img class="house-icon" src="/assets/images/home.svg">
